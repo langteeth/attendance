@@ -1,5 +1,5 @@
 <template>
-    <div class="hello" @click="$parent.$emit('kiss')">
+    <div class="hello" @click="$parent.$emit('mua')">
         <h1 @click="$emit('foo','bar')">{{ msg}}</h1>
         <h2>{{foo}}</h2>
     </div>
@@ -7,8 +7,7 @@
 
 <script>
     export default {
-        name: "HelloWorld",
-        inject:['dong'],
+        name: "HelloWorld2",
         props: {
             msg: String
         },
@@ -18,8 +17,8 @@
             }
         },
         created() {
-            this.$parent.$on('mua', ()=> {
-                console.log('mua')
+            this.$parent.$on('kiss', () => {
+                console.log('kiss')
             })
         }
     }
